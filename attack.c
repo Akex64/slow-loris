@@ -39,10 +39,11 @@ int main(int argc, char argv[]){
 
     char buffer[1024];
 
-    char reqStrs[] = "GET/1.0 \r\n";
+    char reqStrs[] = ""GET / HTTP/1.1 \r\n";
     while(1) {
     	for(auto reqStr : reqStrs){
         	send(conn, reqStr, sizeof(reqStr) , 0);
+		Sleep(1000);
     	}
     }
     close(conn);
