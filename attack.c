@@ -12,7 +12,7 @@
 */
 
 int main(int argc, char argv[]){
-	nt ss = socket(AF_INET, SOCK_STREAM, 0);
+    nt ss = socket(AF_INET, SOCK_STREAM, 0);
 
     struct sockaddr_in server_sockaddr;
     server_sockaddr.sin_family = AF_INET;
@@ -39,7 +39,7 @@ int main(int argc, char argv[]){
 
     char buffer[1024];
 
-    char reqStrs[] = ""GET / HTTP/1.1 \r\n";
+    char reqStrs[] = "GET / HTTP/1.1 \r\n";
     while(1) {
     	for(auto reqStr : reqStrs){
         	send(conn, reqStr, sizeof(reqStr) , 0);
